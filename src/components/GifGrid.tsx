@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { getGifs } from '../services';
 import { IGif } from '../models';
+import { GifItem } from './GifItem';
 
 interface IProps {
   category: string;
@@ -17,12 +18,12 @@ export const GifGrid = ({ category }: IProps): JSX.Element => {
   return (
     <>
       <h2>{category}</h2>
-      {gifs.map(({ title, id, url }: IGif) => (
-        <article key={id}>
-          <h3>{title}</h3>
-          <img src={url} alt={title} />
-        </article>
-      ))}
+
+      <section className="card-grid">
+        {gifs.map((gif: IGif) => (
+          <GifItem key={gif.id} gif={gif} />
+        ))}
+      </section>
     </>
   );
 };
