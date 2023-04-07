@@ -1,5 +1,5 @@
 export interface IGif {
-  id: number;
+  id: string;
   title: string;
   url: string;
 }
