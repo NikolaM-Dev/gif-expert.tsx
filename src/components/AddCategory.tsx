@@ -18,7 +18,7 @@ export const AddCategory = ({ handleAddCategory }: IProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-label="form">
       <input
         onChange={handleChange}
         placeholder="Search Gifs"
