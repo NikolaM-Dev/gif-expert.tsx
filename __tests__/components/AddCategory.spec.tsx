@@ -10,4 +10,14 @@ describe('Tests on <AddCategory />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should to change the value of text input', () => {
+    render(<AddCategory handleAddCategory={() => {}} />);
+
+    const input = screen.getByRole('textbox') as HTMLInputElement;
+
+    fireEvent.input(input, { target: { value: category } });
+
+    expect(input.value).toBe(category);
+  });
 });
