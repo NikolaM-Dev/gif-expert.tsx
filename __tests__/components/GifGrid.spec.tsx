@@ -10,4 +10,11 @@ describe('Tests on <GifGrid />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should to show initial loading', () => {
+    render(<GifGrid category={category} />);
+
+    expect(screen.getByText('Is Loading...')).toBeTruthy();
+    expect(screen.getByText(category)).toBeTruthy();
+  });
 });
